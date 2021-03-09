@@ -1,7 +1,7 @@
 // boards.js  Displays the home page when the user is logged out
 // import logoutButton from './logoutButton';
 import { getBoards } from '../helpers/data/boards';
-import boardCard from './boardCard';
+import boardCard from './cards/boardCard';
 // import pageEvents from '../events/pageEvents';
 
 const boardsPage = (userId) => {

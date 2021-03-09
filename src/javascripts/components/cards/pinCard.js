@@ -8,8 +8,9 @@ const pinCard = (pinObj) => {
     <a href="${pinObj.url}"><h5 class="pin-url" 
     id="pin-url--${pinObj.firebaseKey}">${pinObj.url.substring(0, 20)}...</h5></a>
     <p class="card-text">${pinObj.description}</p>
-    <a href="#" class="btn btn-primary" id="edit-pin--${pinObj.firebaseKey}">Edit Pin</a>
-    <a href="#" class="btn btn-danger" id="delete-pin--${pinObj.firebaseKey}">Delte Pin</a>
+    <a href="#" class="btn btn-primary" id="edit-pin-btn--${pinObj.firebaseKey}"
+       parent-key="${pinObj.board_firebaseKey}">Edit Pin</a>
+    <a href="#" class="btn btn-danger" id="delete-pin-btn--${pinObj.firebaseKey}">Delete Pin</a>
   </div>
   </div></div>`;
   return pinCardStr;

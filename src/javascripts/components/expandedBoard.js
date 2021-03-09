@@ -4,7 +4,7 @@
 import { getBoardPins } from '../helpers/data/boardPins';
 // import pageHeader from './pageHeader';
 // import logoutButton from './logoutButton';
-import pinCard from './pinCard';
+import pinCard from './cards/pinCard';
 
 const expandedBoard = (firebaseKey) => {
   getBoardPins(firebaseKey).then((boardPinsObj) => {

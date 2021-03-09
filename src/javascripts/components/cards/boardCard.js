@@ -8,6 +8,7 @@ const boardCard = (boardObj) => {
     <a href="#"><h5 class="card-title" id="board-title--${boardObj.firebaseKey}">${boardObj.title}</h5></a>
     <p class="card-text">${boardObj.description}</p>
     <a href="#" class="btn btn-primary" id="show-pins--${boardObj.firebaseKey}">Show Pins</a>
+    <a href="#" class="btn btn-primary" id="edit-board--${boardObj.firebaseKey}">Edit Board</a>
     <a href="#" class="btn btn-danger" id="delete-board--${boardObj.firebaseKey}">Delete Board</a>
   </div>
   </div></div>`;
