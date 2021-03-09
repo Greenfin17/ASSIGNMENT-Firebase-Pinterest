@@ -1,8 +1,17 @@
 // startApplication.js
 import boardsPage from '../components/boardsPage';
+import pageBase from '../components/pageBase';
+import pageHeader from '../components/pageHeader';
+import headerEvents from '../events/headerEvents';
+import pageEvents from '../events/pageEvents';
 
 const startApplication = (userObj) => {
-  boardsPage(userObj);
+  const userId = userObj.uid;
+  pageBase();
+  pageHeader('Boards');
+  boardsPage(userId);
+  headerEvents(userId);
+  pageEvents(userId);
 };
 
 export default startApplication;

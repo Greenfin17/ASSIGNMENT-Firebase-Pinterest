@@ -1,18 +1,13 @@
 // boards.js  Displays the home page when the user is logged out
-import logoutButton from './logoutButton';
-import getBoards from '../helpers/data/boards';
+// import logoutButton from './logoutButton';
+import { getBoards } from '../helpers/data/boards';
 import boardCard from './boardCard';
+// import pageEvents from '../events/pageEvents';
 
-const boardsPage = (userObj) => {
-  logoutButton();
-  const appElement = document.querySelector('#app');
-  appElement.innerHTML = `<header>
-    <h1>Boards</h1></header>
-    <main><div class="boards" id="boards-page"></div></div>
-    </main>`;
-  getBoards(userObj.uid).then((response) => response.forEach((board) => {
-    console.warn(`boards are: ${board}`);
-    document.querySelector('#boards-page').innerHTML = boardCard(board);
+const boardsPage = (userId) => {
+  document.querySelector('#page-cards').innerHTML = '';
+  getBoards(userId).then((response) => response.forEach((board) => {
+    document.querySelector('#page-cards').innerHTML += boardCard(board);
   }));
 };
 
