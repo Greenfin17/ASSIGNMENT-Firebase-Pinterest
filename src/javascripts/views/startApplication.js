@@ -1,6 +1,6 @@
 // startApplication.js
-import boardsPage from '../components/boardsPage';
 import pageBase from '../components/pageBase';
+import boardsPage from '../components/boardsPage';
 import pageHeader from '../components/pageHeader';
 import formEvents from '../events/formEvents';
 import headerEvents from '../events/headerEvents';

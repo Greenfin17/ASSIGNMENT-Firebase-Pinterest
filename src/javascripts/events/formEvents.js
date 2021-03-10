@@ -4,7 +4,8 @@ import boardsPage from '../components/boardsPage';
 // import { getSingleBoard } from '../helpers/data/boards';
 import pageHeader from '../components/pageHeader';
 import { updateBoard, addBoard } from '../helpers/data/boards';
-import { updatePin } from '../helpers/data/pins';
+import { updatePin, addPin } from '../helpers/data/pins';
+
 // import { getParentBoard } from '../helpers/data/boardPins';
 
 const formEvents = (userId) => {
@@ -14,6 +15,7 @@ const formEvents = (userId) => {
     const boardTitle = titleNode.innerHTML;
     const boardId = [...titleNode.id];
     const boardKey = boardId.join('').split('--')[1];
+    console.warn(`Title is ${boardTitle}, key is ${boardKey}`);
     if (e.target.id.includes('update-pin')) {
       const pinObj = {
         url: document.querySelector('#pin-url').value,
@@ -25,6 +27,27 @@ const formEvents = (userId) => {
       updatePin(firebaseKey, pinObj).then(() => {
         pageHeader(boardTitle, boardKey);
         expandedBoard(boardKey);
+      });
+      $('#modalForm').modal('toggle');
+    }
+
+    if (e.target.id.includes('add-pin')) {
+      const pinObj = {
+        url: document.querySelector('#pin-url').value,
+        imageUrl: document.querySelector('#pin-image-url').value,
+        description: document.querySelector('#pin-description').value,
+        comment: document.querySelector('#pin-comment').value,
+        board_firebaseKey: document.querySelector('#pin-board').value,
+        uid: userId
+      };
+      addPin(userId, pinObj).then(() => {
+        if (boardKey === 'undefined') {
+          pageHeader('Boards');
+          boardsPage(userId);
+        } else {
+          pageHeader(boardTitle, boardKey);
+          expandedBoard(boardKey);
+        }
       });
       $('#modalForm').modal('toggle');
     }

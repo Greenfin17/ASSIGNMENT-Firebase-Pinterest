@@ -16,7 +16,8 @@ import { getSingleBoard } from '../helpers/data/boards';
 const pageEvents = (userId) => {
   document.querySelector('#page-cards').addEventListener('click', (e) => {
     const firebaseKey = e.target.id.split('--')[1];
-    if (e.target.id.includes('show-pins')) {
+    if (e.target.id.includes('show-pins')
+      || e.target.id.includes('board-title')) {
       console.warn('CLICKED SHOW PINS');
       getSingleBoard(firebaseKey).then((boardObj) => pageHeader(boardObj.title, firebaseKey));
       expandedBoard(firebaseKey);
