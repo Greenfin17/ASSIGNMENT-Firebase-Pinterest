@@ -1,13 +1,12 @@
-// basePage.js
+// pagePinsBase
 
-import logoutButton from './loginButton';
+import logoutButton from '../components/loginButton';
 
-const pageBase = () => {
+const pagePinsBase = () => {
   logoutButton();
   const appElement = document.querySelector('#app');
   appElement.innerHTML = `<nav class="page-nav" id="page-nav">
     <button type="button" class="btn btn-primary" id="home">Home</button>
-    <button type="button" class="btn btn-primary" id="add-board">Add Board</button>
     <button type="button" class="btn btn-primary" id="add-pin">Add Pin</button>
     </nav>
     <main><header class=page-header id="page-header"></header>
@@ -16,4 +15,4 @@ const pageBase = () => {
     </main>`;
 };
 
-export default pageBase;
+export default pagePinsBase;

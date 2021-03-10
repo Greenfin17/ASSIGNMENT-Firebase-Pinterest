@@ -2,14 +2,14 @@
 
 import { getBoards } from '../../helpers/data/boards';
 
-const selectBoard = (userId, pinObj) => {
+const selectBoard = (userId, pinObj = null) => {
   let selectStr = `<label for="board">Select a Board</label>
     <select class="form-control" id="pin-board" required>
     <option value="">Select a Board</option>`;
   getBoards(userId).then((boards) => {
     boards.forEach((board) => {
-      console.warn('each board');
-      if (board && board.firebaseKey === pinObj.board_firebaseKey) {
+      console.warn(`each board ${board.title}'`);
+      if (pinObj && board.firebaseKey === pinObj.board_firebaseKey) {
         selectStr += `<option selected value="${board.firebaseKey}">${board.title}</option>`;
       } else {
         selectStr += `<option value="${board.firebaseKey}">${board.title}</option>`;

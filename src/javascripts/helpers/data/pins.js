@@ -16,6 +16,20 @@ const getPins = (firebaseKey) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const addPin = (userId, pinObj) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/pins.json`, pinObj)
+    .then((response) => {
+      const boardFirebaseObj = { firebaseKey: response.data.name };
+      console.warn(boardFirebaseObj);
+      axios.patch(`${dbUrl}/pins/${response.data.name}.json`, boardFirebaseObj)
+        .then(() => {
+          getPins(pinObj.board_firebaseKey)
+            .then((pinsArr) => resolve(pinsArr))
+            .catch((error) => reject(error));
+        });
+    });
+});
+
 const deletePin = (firebaseKey) => new Promise((resolve, reject) => {
   axios.delete(`${dbUrl}/pins/${firebaseKey}.json`)
     .then(() => getPins(firebaseKey).then((pinsArr) => resolve(pinsArr))
@@ -39,5 +53,6 @@ const updatePin = (firebaseKey, pinObject) => new Promise((resolve, reject) => {
 
 export {
   getPins, getSinglePin,
-  deletePin, updatePin
+  deletePin, updatePin,
+  addPin
 };
