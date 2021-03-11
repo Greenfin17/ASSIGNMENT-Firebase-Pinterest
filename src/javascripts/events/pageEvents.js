@@ -15,9 +15,11 @@ import { getSingleBoard } from '../helpers/data/boards';
 
 const pageEvents = (userId) => {
   document.querySelector('#page-cards').addEventListener('click', (e) => {
+    console.warn(e);
     const firebaseKey = e.target.id.split('--')[1];
     if (e.target.id.includes('show-pins')
-      || e.target.id.includes('board-title')) {
+      || e.target.id.includes('board-title')
+      || e.target.id.includes('board-img')) {
       console.warn('CLICKED SHOW PINS');
       getSingleBoard(firebaseKey).then((boardObj) => pageHeader(boardObj.title, firebaseKey));
       expandedBoard(firebaseKey);
@@ -52,7 +54,9 @@ const pageEvents = (userId) => {
 
     if (e.target.id.includes('delete-board')) {
       console.warn('CLICKED DELETE BOARD');
-      deleteBoardPins(firebaseKey, userId).then(() => boardsPage(userId));
+      if (window.confirm('Are you sure? All associated pins will be deleted!')) {
+        deleteBoardPins(firebaseKey, userId).then(() => boardsPage(userId));
+      }
     }
   });
 };

@@ -2,12 +2,16 @@
 // import logoutButton from './logoutButton';
 import { getBoards } from '../helpers/data/boards';
 import boardCard from './cards/boardCard';
+import { getPins } from '../helpers/data/pins';
 // import pageEvents from '../events/pageEvents';
 
 const boardsPage = (userId) => {
   document.querySelector('#page-cards').innerHTML = '';
   getBoards(userId).then((response) => response.forEach((board) => {
-    document.querySelector('#page-cards').innerHTML += boardCard(board);
+    getPins(board.firebaseKey).then((pinsArr) => {
+      document.querySelector('#page-cards').innerHTML
+      += boardCard(board, pinsArr[0]);
+    });
   }));
 };
 

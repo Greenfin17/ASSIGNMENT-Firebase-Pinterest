@@ -5,7 +5,8 @@ import logoutButton from './loginButton';
 const pageBase = () => {
   logoutButton();
   const appElement = document.querySelector('#app');
-  appElement.innerHTML = `<nav class="page-nav" id="page-nav">
+  appElement.innerHTML = `<h1>Almost Pinterest</h1>
+    </div><nav class="page-nav" id="page-nav">
     <button type="button" class="btn btn-primary" id="home">Home</button>
     <button type="button" class="btn btn-primary" id="add-board">Add Board</button>
     <button type="button" class="btn btn-primary" id="add-pin">Add Pin</button>
