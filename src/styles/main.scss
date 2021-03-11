@@ -1,6 +1,10 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 
+:root {
+  --board-radius: 10px;
+}
+
 body {
   background-color: white;
   color: black;
@@ -13,7 +17,12 @@ div.board-item {
 }
 
 div.board-card {
-  border-radius: 20px;
+  border-radius: var(--board-radius);
+}
+
+.board-card img {
+  border-top-left-radius: var(--board-radius);
+  border-top-right-radius: var(--board-radius);
 }
 
 .pin-card { 
