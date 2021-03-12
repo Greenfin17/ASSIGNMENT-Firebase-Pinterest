@@ -47,8 +47,19 @@ const addBoard = (userId, boardObj) => new Promise((resolve, reject) => {
     });
 });
 
+const searchBoards = (userId, searchStr) => new Promise((resolve, reject) => {
+  let filteredBoards = [];
+  getBoards(userId).then((boards) => {
+    if (boards.length) {
+      filteredBoards = boards.filter((board) => board.title.toLowerCase().includes(searchStr));
+    }
+  })
+    .then(() => resolve(filteredBoards))
+    .catch((error) => reject(error));
+});
+
 export {
   getBoards, getSingleBoard,
   deleteBoard, updateBoard,
-  addBoard
+  addBoard, searchBoards
 };

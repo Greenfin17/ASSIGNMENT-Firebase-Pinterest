@@ -1,6 +1,8 @@
 // headerEvents.js
 
 import boardsPage from '../components/boardsPage';
+import filteredBoardsPage from '../components/filteredBoardsPage';
+import filteredPinsPage from '../components/filteredPinsPage';
 import pageHeader from '../components/pageHeader';
 import modalForm from '../components/forms/modalForm';
 import addBoardForm from '../components/forms/addBoardForm';
@@ -25,6 +27,22 @@ const headerEvents = (userId) => {
       modalForm('Add Pin');
       addPinForm(userId);
       $('#modalForm').modal('toggle');
+    }
+  });
+  document.querySelector('#search-boards').addEventListener('keyup', (e) => {
+    const searchValue = document.querySelector('#search-boards').value.toLowerCase();
+    console.warn(e.target.id);
+    if (e.keyCode === 13) {
+      const searchType = e.target.nextElementSibling.value;
+      console.warn(searchType);
+      if (e.target.nextElementSibling.value === 'boards') {
+        pageHeader('Boards');
+        filteredBoardsPage(userId, searchValue);
+      } else if (e.target.nextElementSibling.value === 'pins') {
+        console.warn('Pins');
+        pageHeader('Pins');
+        filteredPinsPage(userId, searchValue);
+      }
     }
   });
 };
