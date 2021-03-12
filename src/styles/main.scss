@@ -9,7 +9,7 @@ body {
   background-color: white;
   color: black;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 div.board-item {
@@ -31,6 +31,8 @@ div.board-card {
   border-radius: 20px;
   background-size: cover;
 }
+
+
 .card-body p {
   color:black;
   background-color: rgba(255,255,255,0.8);
@@ -38,6 +40,11 @@ div.board-card {
   max-height: 50px;
   overflow: hidden;
 }
+
+p.pin-comment, p.pin-text {
+  display: none;
+}
+
 
 p.card-text:hover {
   max-height: none;
@@ -62,8 +69,33 @@ h5.pin-url:hover {
   background-color: white;
 }
 
+.page-nav .btn {
+  background-color: white;
+  color: black;
+  border: none;
+}
+
+.page-nav .btn:hover {
+  color: blue;
+  background-color: white;
+}
+
 .board-card .btn {
   background-color: transparent;
+  color: black;
+  border: none;
+}
+
+.board-card .btn:hover {
+  color: blue;
+}
+
+.board-card .btn-danger:hover {
+  color: red;
+}
+
+.pin-card .btn {
+  background-color: white;
   color: black;
   border: none;
 }
@@ -72,14 +104,27 @@ h5.pin-url:hover {
   position: absolute;
   bottom: 5px;
   left: 10px;
-  width: 100px
+  width: 100px;
+  background-color: white;
+  color: black;
 }
+
+.pin-card .btn-primary:hover {
+  background-color: blue;
+  color: white;
+}
+
 
 .pin-card .btn-danger{
   position: absolute;
   bottom: 5px;
   right: 10px;
   width: 100px;
+}
+
+.pin-card .btn-danger:hover {
+  background-color: red;
+  color: white;
 }
 
 .btn {

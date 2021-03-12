@@ -15,7 +15,6 @@ import { getSingleBoard } from '../helpers/data/boards';
 
 const pageEvents = (userId) => {
   document.querySelector('#page-cards').addEventListener('click', (e) => {
-    console.warn(e);
     const firebaseKey = e.target.id.split('--')[1];
     if (e.target.id.includes('show-pins')
       || e.target.id.includes('board-title')
@@ -40,9 +39,21 @@ const pageEvents = (userId) => {
       });
     }
 
-    if (e.target.id.includes('pin-item')) {
-      console.warn('CLICKED PIN ITEM');
-      expandedBoard(firebaseKey);
+    if (e.target.id.includes('card-body')) {
+      console.warn('CLICKED CARD BODY');
+      const comment = document.querySelector(`#pin-comment--${firebaseKey}`);
+      const pinText = document.querySelector(`#pin-text--${firebaseKey}`);
+      console.warn(pinText);
+      if (comment.style.display === '') {
+        comment.style.display = 'block';
+      } else if (comment.style.display === 'block') {
+        comment.style.display = '';
+      }
+      if (pinText.style.display === '') {
+        pinText.style.display = 'block';
+      } else if (pinText.style.display === 'block') {
+        pinText.style.display = '';
+      }
     }
 
     if (e.target.id.includes('edit-board')) {
