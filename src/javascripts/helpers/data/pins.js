@@ -16,6 +16,17 @@ const getPins = (firebaseKey) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const getAllPins = (userId) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/pins.json?orderBy="uid"&equalTo="${userId}"`)
+    .then((response) => {
+      const pinsArr = Object.values(response.data);
+      if (response.data) {
+        resolve(pinsArr);
+      } else resolve([]);
+    })
+    .catch((error) => reject(error));
+});
+
 const addPin = (userId, pinObj) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/pins.json`, pinObj)
     .then((response) => {
@@ -50,8 +61,20 @@ const updatePin = (firebaseKey, pinObject) => new Promise((resolve, reject) => {
       .catch((error) => reject(error)));
 });
 
+const searchPins = (userId, searchStr) => new Promise((resolve, reject) => {
+  let filteredPins = [];
+  getAllPins(userId).then((pins) => {
+    if (pins.length) {
+      filteredPins = pins.filter((pin) => pin.description.toLowerCase().includes(searchStr));
+    }
+  })
+    .then(() => resolve(filteredPins))
+    .catch((error) => reject(error));
+});
+
 export {
   getPins, getSinglePin,
+  getAllPins, searchPins,
   deletePin, updatePin,
   addPin
 };
