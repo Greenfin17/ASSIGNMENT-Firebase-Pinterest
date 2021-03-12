@@ -20,7 +20,6 @@ const addPin = (userId, pinObj) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/pins.json`, pinObj)
     .then((response) => {
       const boardFirebaseObj = { firebaseKey: response.data.name };
-      console.warn(boardFirebaseObj);
       axios.patch(`${dbUrl}/pins/${response.data.name}.json`, boardFirebaseObj)
         .then(() => {
           getPins(pinObj.board_firebaseKey)

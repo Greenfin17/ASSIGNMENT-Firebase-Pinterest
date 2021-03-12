@@ -1,9 +1,13 @@
 // boardCard.js  Display each Board
 
-const boardCard = (boardObj) => {
+const boardCard = (boardObj, pinObj = null) => {
+  let imageUrl = '';
+  if (pinObj) {
+    imageUrl = pinObj.imageUrl;
+  }
   const boardCardStr = `<div class="board-item">
-  <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+  <div class="card board-card" id="board-card--${boardObj.firebaseKey}" style="width: 18rem;">
+  <img src="${imageUrl}" id="board-img--${boardObj.firebaseKey}" class="card-img-top" alt="...">
   <div class="card-body">
     <a href="#"><h5 class="card-title" id="board-title--${boardObj.firebaseKey}">${boardObj.title}</h5></a>
     <p class="card-text">${boardObj.description}</p>

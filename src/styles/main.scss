@@ -1,9 +1,132 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 
+:root {
+  --board-radius: 10px;
+}
+
 body {
-  background-color: antiquewhite;
-  color: brown;
+  background-color: white;
+  color: black;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 50px;
+}
+
+div.board-item {
+  margin: 5px 5px 10px;
+}
+
+div.board-card {
+  border-radius: var(--board-radius);
+}
+
+.board-card img {
+  border-top-left-radius: var(--board-radius);
+  border-top-right-radius: var(--board-radius);
+}
+
+.pin-card { 
+  min-height: 400px;
+  width: 252px;
+  border-radius: 20px;
+  background-size: cover;
+}
+
+
+.card-body p {
+  color:black;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 10px;
+  max-height: 50px;
+  overflow: hidden;
+}
+
+p.pin-comment, p.pin-text {
+  display: none;
+}
+
+
+p.card-text:hover {
+  max-height: none;
+}
+
+h5.pin-url {
+  background-color: rgba(255,255,255, 0.5);
+  border-radius: 10px;
+}
+
+h5.pin-url:hover {
+  background-color: white;
+}
+
+.board-card .card-body {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.card-body p:hover {
+  color: black;
+  background-color: white;
+}
+
+.page-nav .btn {
+  background-color: white;
+  color: black;
+  border: none;
+}
+
+.page-nav .btn:hover {
+  color: blue;
+  background-color: white;
+}
+
+.board-card .btn {
+  background-color: transparent;
+  color: black;
+  border: none;
+}
+
+.board-card .btn:hover {
+  color: blue;
+}
+
+.board-card .btn-danger:hover {
+  color: red;
+}
+
+.pin-card .btn {
+  background-color: white;
+  color: black;
+  border: none;
+}
+
+.pin-card .btn-primary {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  width: 100px;
+  background-color: white;
+  color: black;
+}
+
+.pin-card .btn-primary:hover {
+  background-color: blue;
+  color: white;
+}
+
+
+.pin-card .btn-danger{
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  width: 100px;
+}
+
+.pin-card .btn-danger:hover {
+  background-color: red;
+  color: white;
+}
+
+.btn {
+  margin: 0 0 5px;
 }
