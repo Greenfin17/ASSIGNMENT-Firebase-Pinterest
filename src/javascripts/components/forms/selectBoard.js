@@ -8,7 +8,6 @@ const selectBoard = (userId, pinObj = null) => {
     <option value="">Select a Board</option>`;
   getBoards(userId).then((boards) => {
     boards.forEach((board) => {
-      console.warn(`each board ${board.title}'`);
       if (pinObj && board.firebaseKey === pinObj.board_firebaseKey) {
         selectStr += `<option selected value="${board.firebaseKey}">${board.title}</option>`;
       } else {
@@ -17,7 +16,6 @@ const selectBoard = (userId, pinObj = null) => {
     });
     selectStr += '</select>';
     document.querySelector('#pin-select-board').innerHTML = selectStr;
-    console.warn(document.querySelector('#pin-select-board').value);
   });
 };
 

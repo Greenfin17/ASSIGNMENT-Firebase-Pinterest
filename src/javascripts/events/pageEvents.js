@@ -19,20 +19,17 @@ const pageEvents = (userId) => {
     if (e.target.id.includes('show-pins')
       || e.target.id.includes('board-title')
       || e.target.id.includes('board-img')) {
-      console.warn('CLICKED SHOW PINS');
       getSingleBoard(firebaseKey).then((boardObj) => pageHeader(boardObj.title, firebaseKey));
       expandedBoard(firebaseKey);
     }
 
     if (e.target.id.includes('edit-pin-btn')) {
-      console.warn('CLICKED EDIT PIN');
       modalForm('Edit Pin');
       getSinglePin(firebaseKey).then((pinObj) => editPinForm(userId, pinObj));
       $('#modalForm').modal('toggle');
     }
 
     if (e.target.id.includes('delete-pin-btn')) {
-      console.warn('CLICKED DELETE PIN');
       getParentBoard(firebaseKey).then((parentObj) => {
         pageHeader(parentObj.title);
         deletePin(firebaseKey).then(() => expandedBoard(parentObj.firebaseKey));
@@ -40,10 +37,8 @@ const pageEvents = (userId) => {
     }
 
     if (e.target.id.includes('card-body')) {
-      console.warn('CLICKED CARD BODY');
       const comment = document.querySelector(`#pin-comment--${firebaseKey}`);
       const pinText = document.querySelector(`#pin-text--${firebaseKey}`);
-      console.warn(pinText);
       if (comment.style.display === '') {
         comment.style.display = 'block';
       } else if (comment.style.display === 'block') {
@@ -57,14 +52,12 @@ const pageEvents = (userId) => {
     }
 
     if (e.target.id.includes('edit-board')) {
-      console.warn('CLICKED EDIT BOARD');
       modalForm('Edit Board');
       getSingleBoard(firebaseKey).then((board) => editBoardForm(userId, board));
       $('#modalForm').modal('toggle');
     }
 
     if (e.target.id.includes('delete-board')) {
-      console.warn('CLICKED DELETE BOARD');
       if (window.confirm('Are you sure? All associated pins will be deleted!')) {
         deleteBoardPins(firebaseKey, userId).then(() => boardsPage(userId));
       }

@@ -10,9 +10,7 @@ import addPinForm from '../components/forms/addPinForm';
 
 const headerEvents = (userId) => {
   document.querySelector('#page-nav').addEventListener('click', (e) => {
-    console.warn('PAGE HEADER');
     if (e.target.id.includes('home')) {
-      console.warn('HOME BUTTON');
       pageHeader('Boards');
       boardsPage(userId);
     }
@@ -31,15 +29,11 @@ const headerEvents = (userId) => {
   });
   document.querySelector('#search-boards').addEventListener('keyup', (e) => {
     const searchValue = document.querySelector('#search-boards').value.toLowerCase();
-    console.warn(e.target.id);
     if (e.keyCode === 13) {
-      const searchType = e.target.nextElementSibling.value;
-      console.warn(searchType);
       if (e.target.nextElementSibling.value === 'boards') {
         pageHeader('Boards');
         filteredBoardsPage(userId, searchValue);
       } else if (e.target.nextElementSibling.value === 'pins') {
-        console.warn('Pins');
         pageHeader('Pins');
         filteredPinsPage(userId, searchValue);
       }
