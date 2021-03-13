@@ -37,14 +37,17 @@ div.board-card {
   color:black;
   background-color: rgba(255,255,255,0.8);
   border-radius: 10px;
-  max-height: 50px;
-  overflow: hidden;
 }
 
 p.pin-comment, p.pin-text {
   display: none;
 }
 
+.pin-comment { 
+  margin-bottom: 10px;
+  display: block;
+  margin-bottom: 50px
+}
 
 p.card-text:hover {
   max-height: none;

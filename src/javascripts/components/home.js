@@ -4,7 +4,7 @@ import loginButton from './loginButton';
 const homePage = () => {
   loginButton();
   document.querySelector('#app').innerHTML = `<header>
-    <h1>Pinterest</h1></header>`;
+    <h1>Almost Pinterest</h1></header>`;
 };
 
 export default homePage;

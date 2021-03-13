@@ -7,10 +7,8 @@ import homePage from '../components/home';
 
 const checkLoginStatus = () => {
   firebase.initializeApp(firebaseConfig);
-  console.warn('BEFORE onAuthStateChange');
   firebase.auth().onAuthStateChanged((userObj) => {
     if (userObj) {
-      console.warn('LOGGED IN');
       startApplication(userObj);
 
       // person is logged in do something...

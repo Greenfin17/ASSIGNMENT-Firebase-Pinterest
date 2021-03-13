@@ -36,7 +36,9 @@ const pageEvents = (userId) => {
       });
     }
 
-    if (e.target.id.includes('card-body')) {
+    if (e.target.id.includes('card-body')
+        || e.target.id.includes('pin-comment')
+        || e.target.id.includes('pin-text')) {
       const comment = document.querySelector(`#pin-comment--${firebaseKey}`);
       const pinText = document.querySelector(`#pin-text--${firebaseKey}`);
       if (comment.style.display === '') {
