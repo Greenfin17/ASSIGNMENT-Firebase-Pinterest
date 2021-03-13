@@ -1,9 +1,12 @@
 // boardCard.js  Display each Board
+import defaultImage from '../images/AddPins.png';
 
 const boardCard = (boardObj, pinObj = null) => {
   let imageUrl = '';
   if (pinObj) {
     imageUrl = pinObj.imageUrl;
+  } else {
+    imageUrl = defaultImage;
   }
   const boardCardStr = `<div class="board-item">
   <div class="card board-card" id="board-card--${boardObj.firebaseKey}" style="width: 18rem;">

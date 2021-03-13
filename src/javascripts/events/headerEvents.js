@@ -10,7 +10,8 @@ import addPinForm from '../components/forms/addPinForm';
 
 const headerEvents = (userId) => {
   document.querySelector('#page-nav').addEventListener('click', (e) => {
-    if (e.target.id.includes('home')) {
+    if (e.target.id.includes('home')
+      || e.target.id.includes('pinterest-icon')) {
       pageHeader('Boards');
       boardsPage(userId);
     }

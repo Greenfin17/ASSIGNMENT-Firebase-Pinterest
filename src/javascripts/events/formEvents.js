@@ -3,7 +3,7 @@ import expandedBoard from '../components/expandedBoard';
 import boardsPage from '../components/boardsPage';
 // import { getSingleBoard } from '../helpers/data/boards';
 import pageHeader from '../components/pageHeader';
-import { updateBoard, addBoard } from '../helpers/data/boards';
+import { updateBoard, addBoard, getSingleBoard } from '../helpers/data/boards';
 import { updatePin, addPin } from '../helpers/data/pins';
 
 // import { getParentBoard } from '../helpers/data/boardPins';
@@ -40,13 +40,9 @@ const formEvents = (userId) => {
         uid: userId
       };
       addPin(userId, pinObj).then(() => {
-        if (boardKey === 'undefined') {
-          pageHeader('Boards');
-          boardsPage(userId);
-        } else {
-          pageHeader(boardTitle, boardKey);
-          expandedBoard(boardKey);
-        }
+        console.warn(boardKey);
+        getSingleBoard(pinObj.board_firebaseKey).then((boardObj) => pageHeader(boardObj.title, boardObj.firebaseKey));
+        expandedBoard(pinObj.board_firebaseKey);
       });
       $('#modalForm').modal('toggle');
     }

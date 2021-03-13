@@ -1,12 +1,14 @@
 // basePage.js
 
 import logoutButton from './loginButton';
+import pinterestIcon from './images/Pinterest-red.svg';
 
 const pageBase = () => {
   logoutButton();
   const appElement = document.querySelector('#app');
   appElement.innerHTML = `<h1>Almost Pinterest</h1>
     </div><nav class="page-nav" id="page-nav">
+    <img src="${pinterestIcon}" alt="Pinterest Icon" id="pinterest-icon">
     <button type="button" class="btn btn-primary" id="home">Home</button>
     <button type="button" class="btn btn-primary" id="add-board">Add Board</button>
     <button type="button" class="btn btn-primary" id="add-pin">Add Pin</button>
