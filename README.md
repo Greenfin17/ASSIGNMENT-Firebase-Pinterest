@@ -17,5 +17,7 @@
 
     
 ## Screenshot
-  
+![AlmostPinterest](https://user-images.githubusercontent.com/51683901/111020338-ba583300-838a-11eb-9908-d34cadc3c90b.PNG)
+
 ## Loom Video
+https://www.loom.com/share/a55535fb2d1145fbb18466abbe226320
