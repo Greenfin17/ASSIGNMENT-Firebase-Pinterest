@@ -15,7 +15,6 @@ const formEvents = (userId) => {
     const boardTitle = titleNode.innerHTML;
     const boardId = [...titleNode.id];
     const boardKey = boardId.join('').split('--')[1];
-    console.warn(`Title is ${boardTitle}, key is ${boardKey}`);
     if (e.target.id.includes('update-pin')) {
       const pinObj = {
         url: document.querySelector('#pin-url').value,
@@ -69,7 +68,6 @@ const formEvents = (userId) => {
         description: document.querySelector('#board-description').value,
         uid: userId
       };
-      console.warn(boardObj);
       addBoard(userId, boardObj).then(() => {
         pageHeader('Boards');
         boardsPage(userId);
