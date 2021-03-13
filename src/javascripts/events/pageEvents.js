@@ -31,7 +31,7 @@ const pageEvents = (userId) => {
 
     if (e.target.id.includes('delete-pin-btn')) {
       getParentBoard(firebaseKey).then((parentObj) => {
-        pageHeader(parentObj.title);
+        pageHeader(parentObj.title, parentObj.firebaseKey);
         deletePin(firebaseKey).then(() => expandedBoard(parentObj.firebaseKey));
       });
     }
