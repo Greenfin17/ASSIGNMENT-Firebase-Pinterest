@@ -2,6 +2,13 @@
 ## Overview
 - This site allows the user to pin favorite websites in categories
 
+## Wireframe
+https://www.figma.com/file/FtCwp9RSpqnJmwEzr65swG/Pinterest
+
+## Project Board
+https://github.com/Greenfin17/ASSIGNMENT-Firebase-Pinterest/projects/2
+
+
 ## Site link
 - https://unruffled-morse-7d9b48.netlify.app/#
 
