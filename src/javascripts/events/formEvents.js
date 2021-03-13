@@ -60,6 +60,7 @@ const formEvents = (userId) => {
         pageHeader('Boards');
         boardsPage(userId);
       });
+      $('#modalForm').modal('toggle');
     }
 
     if (e.target.id.includes('add-board')) {
