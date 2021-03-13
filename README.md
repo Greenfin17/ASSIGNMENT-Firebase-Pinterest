@@ -10,7 +10,7 @@ https://github.com/Greenfin17/ASSIGNMENT-Firebase-Pinterest/projects/2
 
 
 ## Site link
-- https://unruffled-morse-7d9b48.netlify.app/#
+- https://friendly-dijkstra-f5e799.netlify.app/
 
 ## User
 - The user is someone who likes to organize their site links
