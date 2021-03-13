@@ -35,7 +35,6 @@ const headerEvents = (userId) => {
         filteredBoardsPage(userId, searchValue);
       } else if (e.target.nextElementSibling.value === 'pins') {
         pageHeader('Pins');
-        console.warn(searchValue);
         filteredPinsPage(userId, searchValue);
       }
     }

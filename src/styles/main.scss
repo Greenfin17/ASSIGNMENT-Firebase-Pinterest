@@ -30,12 +30,12 @@ div.board-card {
   width: 252px;
   border-radius: 20px;
   background-size: cover;
+  background-position: center;
 }
-
 
 .card-body p {
   color:black;
-  background-color: rgba(255,255,255,0.8);
+  background-color: white;
   border-radius: 10px;
 }
 
@@ -66,10 +66,6 @@ h5.pin-url:hover {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-}
-.card-body p:hover {
-  color: black;
-  background-color: white;
 }
 
 .page-nav .btn {
