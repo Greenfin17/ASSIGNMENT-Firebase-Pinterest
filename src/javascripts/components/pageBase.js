@@ -13,8 +13,8 @@ const pageBase = () => {
     <button type="button" class="btn btn-primary" id="add-board">Add Board</button>
     <button type="button" class="btn btn-primary" id="add-pin">Add Pin</button>
     <input type="text" id="search-boards" placeholder="Search">
-    <select id="search-select" name="search-list">i
-      <option value="boards">Boards</option>l
+    <select id="search-select" name="search-list">
+      <option value="boards">Boards</option>
       <option value="pins">Pins</option>
     </select>
     </nav>
