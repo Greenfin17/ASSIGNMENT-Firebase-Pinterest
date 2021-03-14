@@ -71,10 +71,13 @@ const formEvents = (userId) => {
         description: document.querySelector('#board-description').value,
         uid: userId
       };
-      addBoard(userId, boardObj).then(() => {
-        pageHeader('Boards');
-        boardsPage(userId);
-      });
+      console.warn(boardObj.title);
+      if (boardObj.title) {
+        addBoard(userId, boardObj).then(() => {
+          pageHeader('Boards');
+          boardsPage(userId);
+        });
+      }
       $('#modalForm').modal('toggle');
     }
   });
