@@ -4,8 +4,9 @@ import signIn from '../helpers/signIn';
 const loginButton = () => {
   const domString = `<nav class="navbar fixed-top navbar-expand mb-4">
   <button id="google-auth" class="btn btn-danger">GOOGLE LOGIN</button>
-  </nav>`;
-  document.querySelector('#login-form-container').innerHTML = domString;
+  </nav>
+  <header id='page-header'><h1>Almost Pinterest</h1></header>`;
+  document.querySelector('#app').innerHTML = domString;
   document.querySelector('#google-auth').addEventListener('click', signIn);
 };
 
