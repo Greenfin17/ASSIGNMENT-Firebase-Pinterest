@@ -23,10 +23,12 @@ const formEvents = (userId) => {
         comment: document.querySelector('#pin-comment').value,
         board_firebaseKey: document.querySelector('#pin-board').value,
       };
-      updatePin(firebaseKey, pinObj).then(() => {
-        pageHeader(boardTitle, boardKey);
-        expandedBoard(boardKey);
-      });
+      if (pinObj.board_firebaseKey) {
+        updatePin(firebaseKey, pinObj).then(() => {
+          pageHeader(boardTitle, boardKey);
+          expandedBoard(boardKey);
+        });
+      }
       $('#modalForm').modal('toggle');
     }
 
@@ -39,11 +41,15 @@ const formEvents = (userId) => {
         board_firebaseKey: document.querySelector('#pin-board').value,
         uid: userId
       };
-      addPin(userId, pinObj).then(() => {
-        console.warn(boardKey);
-        getSingleBoard(pinObj.board_firebaseKey).then((boardObj) => pageHeader(boardObj.title, boardObj.firebaseKey));
-        expandedBoard(pinObj.board_firebaseKey);
-      });
+      if (pinObj.url
+         && pinObj.imageUrl
+         && pinObj.board_firebaseKey
+         && pinObj.uid) {
+        addPin(userId, pinObj).then(() => {
+          getSingleBoard(pinObj.board_firebaseKey).then((boardObj) => pageHeader(boardObj.title, boardObj.firebaseKey));
+          expandedBoard(pinObj.board_firebaseKey);
+        });
+      }
       $('#modalForm').modal('toggle');
     }
 
