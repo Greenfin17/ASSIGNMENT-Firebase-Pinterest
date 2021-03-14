@@ -71,7 +71,6 @@ const formEvents = (userId) => {
         description: document.querySelector('#board-description').value,
         uid: userId
       };
-      console.warn(boardObj.title);
       if (boardObj.title) {
         addBoard(userId, boardObj).then(() => {
           pageHeader('Boards');
