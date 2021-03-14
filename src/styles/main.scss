@@ -9,11 +9,29 @@ body {
   background-color: white;
   color: black;
   text-align: center;
-  margin-top: 50px;
 }
 
 #home {
   margin-left: 5px;
+}
+
+h1 {
+  margin: 30px auto 20px;
+}
+
+.page-header {
+  margin: 0 auto 20px;
+}
+a#home,
+a#add-board,
+a#add-pin {
+  color: black;
+}
+
+a#home:hover,
+a#add-board:hover,
+a#add-pin:hover {
+  color: blue;
 }
 
 div.board-item {
@@ -138,10 +156,8 @@ h5.pin-url:hover {
   margin: 0 0 5px;
 }
 
-#search-boards {
-  margin-left: 40px;
-}
-
 #search-select {
-  height: 30px;
+  height: 35px;
+  margin-right: 10px;
+  width: 5em;
 }

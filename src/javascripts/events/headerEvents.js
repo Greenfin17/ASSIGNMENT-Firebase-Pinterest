@@ -11,7 +11,8 @@ import addPinForm from '../components/forms/addPinForm';
 const headerEvents = (userId) => {
   document.querySelector('#page-nav').addEventListener('click', (e) => {
     if (e.target.id.includes('home')
-      || e.target.id.includes('pinterest-icon')) {
+      || e.target.id.includes('pinterest-icon')
+      || e.target.id.includes('pinterest-brand')) {
       pageHeader('Boards');
       boardsPage(userId);
     }
@@ -28,13 +29,29 @@ const headerEvents = (userId) => {
       $('#modalForm').modal('toggle');
     }
   });
-  document.querySelector('#search-all').addEventListener('keyup', (e) => {
+
+  document.querySelector('#search-all-form').addEventListener('click', (e) => {
+    e.preventDefault();
+    console.warn('CLICKED');
     const searchValue = document.querySelector('#search-all').value.toLowerCase();
-    if (e.keyCode === 13) {
-      if (e.target.nextElementSibling.value === 'boards') {
+    if (e.target.id.includes('search-submit')) {
+      if (document.querySelector('#search-select').value === 'boards') {
         pageHeader('Boards');
         filteredBoardsPage(userId, searchValue);
-      } else if (e.target.nextElementSibling.value === 'pins') {
+      } else if (document.querySelector('#search-select').value === 'pins') {
+        pageHeader('Pins');
+        filteredPinsPage(userId, searchValue);
+      }
+    }
+  });
+
+  document.querySelector('#search-all-form').addEventListener('keyup', (e) => {
+    const searchValue = document.querySelector('#search-all').value.toLowerCase();
+    if (e.keyCode === 13) {
+      if (e.target.previousElementSibling.value === 'boards') {
+        pageHeader('Boards');
+        filteredBoardsPage(userId, searchValue);
+      } else if (e.target.previousElementSibling.value === 'pins') {
         pageHeader('Pins');
         filteredPinsPage(userId, searchValue);
       }
