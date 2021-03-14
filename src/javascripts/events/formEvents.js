@@ -46,7 +46,6 @@ const formEvents = (userId) => {
         && pinObj.board_firebaseKey
         && pinObj.uid) {
         addPin(userId, pinObj).then(() => {
-          console.warn(boardKey);
           getSingleBoard(pinObj.board_firebaseKey).then((boardObj) => pageHeader(boardObj.title, boardObj.firebaseKey));
           expandedBoard(pinObj.board_firebaseKey);
         });

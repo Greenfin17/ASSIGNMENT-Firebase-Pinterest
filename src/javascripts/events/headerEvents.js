@@ -32,7 +32,6 @@ const headerEvents = (userId) => {
 
   document.querySelector('#search-all-form').addEventListener('click', (e) => {
     e.preventDefault();
-    console.warn('CLICKED');
     const searchValue = document.querySelector('#search-all').value.toLowerCase();
     if (e.target.id.includes('search-submit')) {
       if (document.querySelector('#search-select').value === 'boards') {
