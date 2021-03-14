@@ -3,8 +3,8 @@ import loginButton from './loginButton';
 
 const homePage = () => {
   loginButton();
-  document.querySelector('#app').innerHTML = `<header>
-    <h1>Almost Pinterest</h1></header>`;
+  document.querySelector('#page-header').innerHTML = `
+    <h1>Almost Pinterest</h1>`;
 };
 
 export default homePage;

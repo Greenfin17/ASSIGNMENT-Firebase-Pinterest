@@ -28,8 +28,8 @@ const headerEvents = (userId) => {
       $('#modalForm').modal('toggle');
     }
   });
-  document.querySelector('#search-boards').addEventListener('keyup', (e) => {
-    const searchValue = document.querySelector('#search-boards').value.toLowerCase();
+  document.querySelector('#search-all').addEventListener('keyup', (e) => {
+    const searchValue = document.querySelector('#search-all').value.toLowerCase();
     if (e.keyCode === 13) {
       if (e.target.nextElementSibling.value === 'boards') {
         pageHeader('Boards');

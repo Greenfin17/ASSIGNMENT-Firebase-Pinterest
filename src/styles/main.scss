@@ -72,15 +72,19 @@ h5.pin-url:hover {
   flex-direction: column;
 }
 
-.page-nav .btn {
+.navbar .btn-primary {
   background-color: white;
   color: black;
   border: none;
 }
 
-.page-nav .btn:hover {
+.navbar .btn-primary:hover {
   color: blue;
   background-color: white;
+}
+
+#google-auth {
+  margin-left: 40px;
 }
 
 .board-card .btn {
