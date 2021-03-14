@@ -1,55 +1,30 @@
-# Pinterest
+# Almost Pinterest
+## Overview
+- This site allows the user to pin favorite websites in categories
 
-Your team has been tasked with creating pinterest.  If you live under a rock and have never used pinterest before go figure out what it does. TLDR; users create boards and can pin urls to the boards
+## Wireframe
+https://www.figma.com/file/FtCwp9RSpqnJmwEzr65swG/Pinterest
 
-## Requirements
-* Clean code - single responsibility principle
-* ES6 Modules bundled with webpack
-* No errors - linters should be clean
-* SASS and Bootstrap for styling
-* Completely planned out - before each section you should be making new cards before you code.  You should have wireframes and an ERD
+## Project Board
+https://github.com/Greenfin17/ASSIGNMENT-Firebase-Pinterest/projects/2
 
-## HW Parts
 
-### Part 1: ERDs and Authentication
-* Create an ERD for pinterest (do this in studygroup)
-* Clone this repo
-* Create a setup branch
-* Do all the stuff needed when setting up the project. Reference the webpack instructions if needed. These include making the updates to the `.env` file
-  * Create a new firebase project, database, and enable google authentication, etc.
-* Create an authentication branch and add a navbar with logout button, and place the google login button somewhere for you to test
-  * **Note: There are components that you can use to get started and style later. We just want you to get your auth setup by yourself.**
-* When your user is **logged out** they should see the navbar with only a brand.  And an h1 on the page that says PINTEREST (make a `home` component for this)
-* When your user is logged in they should see a navbar with a brand and a logout button and an H1 on the page that says Boards (make a `boards` component for this)
+## Site link
+- https://friendly-dijkstra-f5e799.netlify.app/
 
-### Part 2: READ
-#### Setup
-* Create some json data
-* Import that data into firebase
+## User
+- The user is someone who likes to organize their site links
 
-#### User Stories
-* As a user, when I am logged in and the page loads, I should see all the boards that belong to me.
+## Features
+- The user can view their boards.
+- The user can view their pins organized by boards
+- The user can search their pins and boards.
+- The user can add pins and boards.
+- The user can update and delete pins and boards.
 
-* As a user, when I click on one of my boards, I should see a single board view that shows all pins for that board.
+    
+## Screenshot
+![AlmostPinterest](https://user-images.githubusercontent.com/51683901/111020338-ba583300-838a-11eb-9908-d34cadc3c90b.PNG)
 
-* As a user, when I am on the single board view, there should be some way to go back to all my boards.
-
-### Part 3: DELETE
-* As a user, I should be able to delete a pin from one of my boards.
-
-* As a user, I should be able to delete one of my boards.
-
-* As a user, when I delete one of my boards all pins that were on that board should be deleted as well.
-
-### Part 4: CREATE
-* As a user, I should be able to create a new pin.
-
-* As a user, I should be able to create a new board.
-
-### Part 5: UPDATE
-* As a user, I should be able to change which board a pin belongs to.
-
-### Part 6: Deploy and Readme
-* As a user I should be able to use your app on the internet - it should be deployed using Netlify.
-
-* As a developer, I want to see an amazing README for this project.
+## Loom Video
+https://www.loom.com/share/a55535fb2d1145fbb18466abbe226320
