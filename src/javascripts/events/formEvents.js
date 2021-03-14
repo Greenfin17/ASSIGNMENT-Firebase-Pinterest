@@ -75,6 +75,7 @@ const formEvents = (userId) => {
         pageHeader('Boards');
         boardsPage(userId);
       });
+      $('#modalForm').modal('toggle');
     }
   });
 };
