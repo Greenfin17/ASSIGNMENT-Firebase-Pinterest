@@ -27,4 +27,4 @@ https://github.com/Greenfin17/ASSIGNMENT-Firebase-Pinterest/projects/2
 ![AlmostPinterest](https://user-images.githubusercontent.com/51683901/111058739-02905780-8456-11eb-9b40-c82dddfe343d.PNG)
 
 ## Loom Video
-https://www.loom.com/share/a55535fb2d1145fbb18466abbe226320
+https://www.loom.com/share/f1307356d99e4815a77d865052651745
