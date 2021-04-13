@@ -10,6 +10,7 @@ https://github.com/Greenfin17/ASSIGNMENT-Firebase-Pinterest/projects/2
 
 
 ## Site link
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b7538171-036e-451a-8c81-2beba69947d1/deploy-status)](https://app.netlify.com/sites/friendly-dijkstra-f5e799/deploys)
 - https://friendly-dijkstra-f5e799.netlify.app/
 
 ## User
